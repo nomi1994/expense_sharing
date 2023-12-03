@@ -1,22 +1,7 @@
 import * as React from "react";
 import { Text, View, FlatList, TouchableOpacity, Alert } from "react-native";
 
-export default function Home() {
-  // Define your data for the flat list
-
-  // const onPress = () => {
-  //   navigation.navigate("LedgerDetails", { item });
-
-  //   // Alert.alert("Alert Title", "My Alert Msg", [
-  //   //   {
-  //   //     text: "Cancel",
-  //   //     onPress: () => console.log("Cancel Pressed"),
-  //   //     style: "cancel",
-  //   //   },
-  //   //   { text: "OK", onPress: () => console.log("OK Pressed") },
-  //   // ]);
-  // };
-
+export default function Home({ navigation }) {
   const data = [
     {
       id: "item1",
@@ -244,7 +229,8 @@ export default function Home() {
       <FlatList
         data={data}
         renderItem={({ item }) => (
-          <TouchableOpacity onPress={() => {}}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("LedgerDetails")}>
             <View
               style={{
                 backgroundColor: "green",
